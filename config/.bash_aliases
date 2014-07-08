@@ -49,5 +49,11 @@ git config --global alias.unp 'log origin/master..HEAD'
 alias be="bundle exec"
 export PATH=$PATH:/c/Ruby200/bin
 
+# export PATH=$PATH:$CMDER_ROOT/vendor/msysgit/cmd:$CMDER_ROOT/vendor/msysgit/bin
+
 # PS1
 export PS1="\[\033[0m\]\[\033[32m\]\u \[\033[33m\]\w$(__git_ps1)\[\033[0m\]\n$ "
+
+if [ -e $CMDER_ROOT/config/.bash_priv ]; then
+	. $CMDER_ROOT/config/.bash_priv
+fi
