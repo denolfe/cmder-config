@@ -1,0 +1,8 @@
+# Ignore Everything
+*
+
+# But not these files...
+!.gitignore
+!README.md
+!config/
+!vendor/msysgit/etc/profile
