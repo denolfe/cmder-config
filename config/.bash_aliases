@@ -1,4 +1,4 @@
-alias reload="source ~/.bashrc && echo Bashrc Reloaded."
+alias reload="source ~/.bashrc; source /d/Dropbox/HomeShare/cmder/config/.bash_aliases; echo Bash Reloaded."
 
 # Easier navigation: .., ..., ...., ....., and ~
 alias ..="cd .."
@@ -47,8 +47,8 @@ git config --global alias.unp 'log origin/master..HEAD'
 
 # Ruby
 alias be="bundle exec"
-export PATH=$PATH:/c/Ruby200/bin
-
+alias mm="middleman"
+# export PATH=$PATH:/c/Ruby200/bin
 # export PATH=$PATH:$CMDER_ROOT/vendor/msysgit/cmd:$CMDER_ROOT/vendor/msysgit/bin
 
 # PS1
