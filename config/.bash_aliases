@@ -8,7 +8,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias .4='cd ../../../../'
+alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias ~='cd ~/'
 
@@ -20,9 +20,6 @@ alias search="apt-cache search"
 
 # Apps
 alias subl="/d/Dropbox/HomeShare/SublimePortable/sublime_text.exe"
-alias sp='/d/Dropbox/Homeshare/Ruby/sp/salespad.rb'
-alias erp='/d/Dropbox/Homeshare/Ruby/sp/erp.rb'
-alias sc='/d/Dropbox/Homeshare/Ruby/sp/sc.rb'
 alias e='explorer'
 
 # Directories
@@ -52,8 +49,15 @@ git config --global alias.unp 'log origin/master..HEAD'
 alias be="bundle exec"
 alias mm="middleman"
 
+# Web Dev
+## npm -g install simple-http-server
+alias serve="nserver"
+
 # PS1
 export PS1="\[\033[0m\]\[\033[32m\]\u \[\033[33m\]\w$(__git_ps1)\[\033[0m\]\n$ "
+
+export PATH=$PATH:/c/Program\ Files\ \(x86\)/nodejs
+export PATH=$PATH:/c/Python27/
 
 if [ -e $CMDER_ROOT/config/.bash_priv ]; then
 	. $CMDER_ROOT/config/.bash_priv
