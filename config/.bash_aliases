@@ -24,9 +24,12 @@ alias e='explorer'
 
 # Directories
 alias hs="cd /d/Dropbox/Homeshare"
+alias ahk="cd /d/Dropbox/Homeshare/AutoHotkey"
 alias rb="cd /d/Dropbox/Homeshare/Ruby"
 alias wd="cd /d/Dropbox/Homeshare/webdev"
 alias gh="cd /d/Dropbox/Homeshare/GitHub"
+alias nd="cd /d/Dropbox/Homeshare/Node"
+alias ncg="cd /d/Dropbox/Homeshare/Node/nodecg"
 
 # Git
 
@@ -48,13 +51,15 @@ git config --global alias.unp 'log origin/master..HEAD'
 # Ruby
 alias be="bundle exec"
 alias mm="middleman"
+alias ds="dashing start"
 
 # Web Dev
-## npm -g install simple-http-server
 alias serve="nserver"
+alias djs="dashing-js start"
+alias ns="npm start"
 
 # PS1
-export PS1="\[\033[0m\]\[\033[32m\]\u \[\033[33m\]\w$(__git_ps1)\[\033[0m\]\n$ "
+export PS1="\[\033[32m\]elliot \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n→ "
 
 export PATH=$PATH:/c/Program\ Files\ \(x86\)/nodejs
 export PATH=$PATH:/c/Python27/
