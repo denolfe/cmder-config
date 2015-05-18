@@ -2,6 +2,8 @@
 
 This is my configuration for running a portable [Cmder](https://github.com/bliker/cmder)
 
+![Image](preview.png)
+
 Included:
 - ConEmu config
     + Bash as default shell
