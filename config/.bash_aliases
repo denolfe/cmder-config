@@ -1,4 +1,7 @@
 alias reload="source ~/.bashrc; source /d/Dropbox/HomeShare/cmder/config/.bash_aliases; echo Bash Reloaded."
+alias rl=reload
+alias aliases="cat /c/Users/QIDX/Documents/cmder/config/.bashrc"
+alias cr='cd "$CMDER_ROOT"'
 
 alias ls='ls --color=auto -p'
 alias ll='ls -la'
@@ -12,15 +15,16 @@ alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 alias ~='cd ~/'
 
-# Package management
-alias update="sudo apt-get -qq update && sudo apt-get upgrade"
-alias install="sudo apt-get install"
-alias remove="sudo apt-get remove"
-alias search="apt-cache search"
-
 # Apps
-alias subl="/d/Dropbox/HomeShare/SublimePortable/sublime_text.exe"
 alias e='explorer'
+alias e.="explorer ."
+alias ds="dashing start"
+alias djs="dashing-js start"
+alias ns="npm start"
+alias be="bundle exec"
+alias mm="middleman"
+alias serve="nserver"
+alias djs="dashing-js start"
 
 # Directories
 alias hs="cd /d/Dropbox/Homeshare"
@@ -47,23 +51,25 @@ git config --global alias.hist 'log --oneline --graph --decorate --all'
 git config --global alias.stu 'status -uno'
 git config --global alias.st 'status'
 git config --global alias.unp 'log origin/master..HEAD'
-
-# Ruby
-alias be="bundle exec"
-alias mm="middleman"
-alias ds="dashing start"
-
-# Web Dev
-alias serve="nserver"
-alias djs="dashing-js start"
-alias ns="npm start"
-
-# PS1
-export PS1="\[\033[32m\]elliot \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n→ "
+git config --global alias.pom 'push origin master'
+git config --global alias.undolast 'reset HEAD~1'
 
 export PATH=$PATH:/c/Program\ Files\ \(x86\)/nodejs
 export PATH=$PATH:/c/Python27/
+export PATH=$PATH:/c/Program\ Files\ \(x86\)/GnuWin32/bin
 
 if [ -e $CMDER_ROOT/config/.bash_priv ]; then
 	. $CMDER_ROOT/config/.bash_priv
 fi
+
+find_git_dirty () {
+  if [[ ! -z $(__git_ps1) && -n $(git status --porcelain) ]]; then echo "*"; fi
+}
+
+# PS1
+ORANGE="\[\033[32m\]"
+RED="\[\033[31m\]"
+GREEN="\[\033[33m\]"
+BLUE="\[\033[36m\]"
+WHITE="\[\033[0m\]"
+export PS1="${ORANGE}\u ${GREEN}\w${BLUE}\$(__git_ps1) ${RED}\$(find_git_dirty)${WHITE}\n→ "
