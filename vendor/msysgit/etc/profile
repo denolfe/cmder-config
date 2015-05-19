@@ -183,6 +183,6 @@ elif [ -e /etc/bash_profile ]; then
     . /etc/bash_profile
 fi
 
-if [ -e $CMDER_ROOT/config/.bash_aliases ]; then
-	. $CMDER_ROOT/config/.bash_aliases
+if [ -e $CMDER_ROOT/config/.bashrc ]; then
+	. $CMDER_ROOT/config/.bashrc
 fi
