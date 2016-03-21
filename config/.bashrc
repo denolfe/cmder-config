@@ -72,4 +72,4 @@ RED="\[\033[31m\]"
 GREEN="\[\033[33m\]"
 BLUE="\[\033[36m\]"
 WHITE="\[\033[0m\]"
-export PS1="${ORANGE}\u ${GREEN}\w${BLUE}\$(__git_ps1) ${RED}\$(find_git_dirty)${WHITE}\n→ "
+export PS1="${ORANGE}\w${BLUE}\$(__git_ps1) ${RED}\$(find_git_dirty)${WHITE}"$'\n→ '
