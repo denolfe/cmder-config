@@ -66,10 +66,19 @@ find_git_dirty () {
   if [[ ! -z $(__git_ps1) && -n $(git status --porcelain) ]]; then echo "*"; fi
 }
 
+find_git_commit_diff () {
+  if [[ ! -z $(__git_ps1) ]]; then
+    commit_diff=$(git for-each-ref --format="%(push:track)" refs/heads)
+    commit_diff=${commit_diff//ahead\ /\+}
+    commit_diff=${commit_diff//behind\ /\-}
+    echo $commit_diff
+  fi
+}
+
 # PS1
 ORANGE="\[\033[32m\]"
 RED="\[\033[31m\]"
 GREEN="\[\033[33m\]"
 BLUE="\[\033[36m\]"
 WHITE="\[\033[0m\]"
-export PS1="${ORANGE}\w${BLUE}\$(__git_ps1) ${RED}\$(find_git_dirty)${WHITE}"$'\n→ '
+export PS1="${ORANGE}\w${BLUE}\$(__git_ps1)\$(find_git_commit_diff) ${RED}\$(find_git_dirty)${WHITE}"$'\n→ '
